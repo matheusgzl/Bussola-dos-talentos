@@ -80,6 +80,12 @@
 }
 
 
+.carousel-item i.bi {
+  margin: 0 2px;
+  font-size: 1.2rem;
+}
+
+
 /* Seta PREVIOUS (⬅️ esquerda) */
 .carousel-control-prev-icon {
   background-image: none;
