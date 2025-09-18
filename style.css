@@ -80,12 +80,6 @@
 }
 
 
-.carousel-item i.bi {
-  margin: 0 2px;
-  font-size: 1.2rem;
-}
-
-
 /* Seta PREVIOUS (⬅️ esquerda) */
 .carousel-control-prev-icon {
   background-image: none;
@@ -134,10 +128,9 @@
   }
 }
 
-/* Borda azul claro para Básico e Business */
-.card.borda-azul {
-  border: 2px solid #5dade2; /* azul claro */
-}
+
+
+
 
 
 /* Botões */
