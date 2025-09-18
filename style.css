@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+/* Hero Section */
+/* Header com imagem responsiva */
+.hero-header {
+  background-image: url('imagens/jordan-madrid-iDzKdNI7Qgc-unsplash.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .hero-header {
+    background-position: left center;
+    background-attachment: fixed;
+    min-height: 80vh;
+    padding: 60px 20px;
+  }
+
+  .hero-header h1 {
+    font-size: 2rem;
+  }
+
+  .hero-header p {
+    font-size: 1rem;
+  }
+}
+
+#como-funciona {
+  background: linear-gradient(to right, #add8e6, #f1c40f);
+  color: #fff;
+  padding: 60px 20px;
+}
+
+#como-funciona h2,
+#como-funciona h5,
+#como-funciona p  {
+
+    color: #fff;
+}
+
+
+
+/* Cards */
+.card h5 {
+  color: #f1c40f;
+}
+
+
+/* Estilo das imagens dos usuários */
+.carousel-item img {
+  object-fit: cover;
+  border: 3px solid #f1c40f;
+}
+
+/* Setas pretas */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  width: 2rem;
+  height: 2rem;
+}
+
+.carousel-control-prev-icon {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 0 1-.708-.708L9.293 7 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
+
+/* Seta PREVIOUS (⬅️ esquerda) */
+.carousel-control-prev-icon {
+  background-image: none;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(255, 255, 255);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+/* Seta NEXT (➡️ direita) */
+.carousel-control-next-icon {
+  background-image: none;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(255, 255, 255);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 0 1-.708-.708L9.293 7 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+/* Destaque animado para o plano Premium */
+.card.destacado {
+  border: 2px solid #f1c40f;
+  box-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
+  animation: pulse 2.5s infinite;
+  transition: transform 0.3s ease;
+}
+
+.card.destacado:hover {
+  transform: scale(1.03);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(241, 196, 15, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
+  }
+}
+
+
+/* Borda azul claro para Básico e Business */
+.card.borda-azul {
+  border: 2px solid #5dade2; /* azul claro */
+}
+
+
+
+/* Botões */
+.btn-warning {
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+.btn-warning:hover {
+  transform: scale(1.05);
+}
