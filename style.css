@@ -129,6 +129,10 @@
 }
 
 
+/* Borda azul claro para Básico e Business */
+.card.borda-azul {
+  border: 2px solid #5dade2; /* azul claro */
+}
 
 
 
