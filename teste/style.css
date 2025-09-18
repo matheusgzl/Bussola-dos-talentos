@@ -134,11 +134,10 @@
   }
 }
 
-div.azul {
-  border: 1px solid rgb(32, 158, 243);
+/* Borda azul claro para Básico e Business */
+.card.borda-azul {
+  border: 2px solid #5dade2; /* azul claro */
 }
-
-
 
 
 /* Botões */
