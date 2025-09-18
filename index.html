@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -34,7 +35,7 @@
     <div class="container">
         <h1 class="display-4">Descubra seus talentos naturais</h1>
         <p class="lead">Encontre o seu verdadeiro norte e transforme sua vida.</p>
-        <a href="#teste" class="btn btn-warning btn-lg mt-3">Iniciar Teste</a>
+        <a href="#teste" class="btn btn-warning btn-lg mt-3 btn-efeito">Iniciar Teste</a>
     </div>
     </header>
 
@@ -45,7 +46,7 @@
       <h2 class="mb-4">O que é a Bússola de Talentos?</h2>
       <p class="lead">Um teste motivacional que revela seus talentos e ajuda você a encontrar direção na vida.</p>
       <div class="row mt-4">
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up">
           <div class="card border-0 shadow-sm">
             <div class="card-body">
               <h5>🎯 Autoconhecimento</h5>
@@ -53,7 +54,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up">
           <div class="card border-0 shadow-sm">
             <div class="card-body">
               <h5>🌟 Propósito</h5>
@@ -61,7 +62,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up">
           <div class="card border-0 shadow-sm">
             <div class="card-body">
               <h5>🧭 Direcionamento</h5>
@@ -78,15 +79,15 @@
   <div class="container">
     <h2 class="mb-4">Como Funciona</h2>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up">
         <h5>1️⃣ Responda perguntas motivacionais</h5>
         <p>Simples, rápidas e profundas.</p>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up">
         <h5>2️⃣ Receba seu resultado</h5>
         <p>Um perfil personalizado com seus talentos.</p>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="fade-up">
         <h5>3️⃣ Descubra seu caminho</h5>
         <p>Use o resultado como bússola para sua vida.</p>
       </div>
@@ -98,7 +99,7 @@
 
  <!-- Depoimentos Interativos -->
 <section id="depoimentos" class="py-5 bg-dark text-white">
-  <div class="container">
+  <div class="container" data-aos="fade-up">
     <h2 class="text-center mb-5">O que dizem sobre a Bússola de Talentos</h2>
     <div id="carouselDepoimentos" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -151,14 +152,14 @@
 
   <!-- Chamada Final -->
   <section id="teste" class="py-5 text-center text-white bg-dark">
-    <div class="container">
+    <div class="container" >
       <h2 class="mb-4">Pronto para descobrir seu verdadeiro talento?</h2>
       <a href="#" class="btn btn-warning btn-lg">Começar Agora</a>
     </div>
   </section>
 
   <!-- Planos -->
-<section id="planos" class="py-5 bg-light">
+<section id="planos" class="py-5 bg-light" data-aos="fade-up">
   <div class="container text-center">
     <h2 class="mb-5">Escolha seu Plano</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -239,6 +240,14 @@
     ride: 'carousel'
   });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+
 
 </body>
 </html>
