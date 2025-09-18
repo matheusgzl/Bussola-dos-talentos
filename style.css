@@ -15,6 +15,18 @@
   justify-content: center;
 }
 
+.nav-compass {
+  display: inline-block;
+  transition: transform 0.6s ease;
+}
+
+.nav-compass:hover {
+  transform: rotate(360deg);
+}
+
+
+
+
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
   .hero-header {
@@ -34,8 +46,8 @@
 }
 
 #como-funciona {
-  background: linear-gradient(to right, #add8e6, #f1c40f);
-  color: #fff;
+  background-color: #F8F9FA;
+  color: black;
   padding: 60px 20px;
 }
 
@@ -43,7 +55,7 @@
 #como-funciona h5,
 #como-funciona p  {
 
-    color: #fff;
+    color: black;
 }
 
 
