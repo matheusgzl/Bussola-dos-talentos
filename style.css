@@ -13,6 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.719);
 }
 
 .nav-compass {
@@ -58,6 +59,41 @@
     color: black;
 }
 
+#depoimentos {
+  background: linear-gradient(-45deg, #f39c12, #e74c3c, #8e44ad, #3498db);
+  background-size: 400% 400%;
+  animation: gradientPulse 10s ease infinite;
+  color: #fff;
+  padding: 80px 20px;
+}
+
+@keyframes gradientPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#depoimentos .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* Fundo animado com gradiente pulsante */
+.bg-gradient-pulsante {
+  background: linear-gradient(-45deg, #f39c12, #e74c3c, #8e44ad, #3498db);
+  background-size: 400% 400%;
+  animation: gradientPulse 10s ease infinite;
+  color: #fff;
+  padding: 80px 20px;
+}
+
+@keyframes gradientPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
 
 /* Cards */
@@ -69,7 +105,7 @@
 /* Estilo das imagens dos usuários */
 .carousel-item img {
   object-fit: cover;
-  border: 3px solid #f1c40f;
+  border: 3px solid #ffffff;
 }
 
 /* Setas pretas */
@@ -115,6 +151,76 @@
   mask-position: center;
   mask-size: contain;
 }
+
+/* Espaçamento suave entre depoimentos e CTA */
+#depoimentos .mt-5.pt-4 {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Ícone girando */
+.compass-icon svg {
+  animation: spin 3s linear infinite;
+  color: #fff;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Fundo animado */
+.bg-gradient-pulsante {
+  background: linear-gradient(-45deg, #f39c12, #e74c3c, #8e44ad, #3498db);
+  background-size: 400% 400%;
+  animation: gradientPulse 10s ease infinite;
+  color: #fff;
+  padding: 80px 20px;
+}
+
+@keyframes gradientPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+
+.card-body img {
+  object-fit: cover;
+  border: 3px solid #ffffff;
+}
+
+.card-elevada {
+  background: rgba(255, 255, 255, 0.05); /* leve transparência sobre o gradiente */
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-elevada:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-elevada .card-text,
+.card-elevada .card-subtitle,
+.card-elevada h6 {
+  color: #fff !important;
+}
+
+
+.card-body img {
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+}
+
+
+
 
 /* Destaque animado para o plano Premium */
 .card.destacado {
