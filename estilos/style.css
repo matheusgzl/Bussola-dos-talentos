@@ -198,6 +198,8 @@
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             .hero-section {
+                position: relative;
+                background-size: cover;
                 padding: 2rem 0;
             }
             
