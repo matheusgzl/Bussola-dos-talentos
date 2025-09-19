@@ -254,8 +254,6 @@
 
 
 
-
-
 /* Botões */
 .btn-warning {
   font-weight: bold;
@@ -291,4 +289,3 @@
 .btn-efeito:hover::after {
   left: 100%;
 }
-

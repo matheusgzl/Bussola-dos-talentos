@@ -2,103 +2,252 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bússola dos Talentos</title>
-  <link rel="stylesheet" href="estilos/style.css">
-  <link rel="stylesheet" href="estilos/media-query.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bússola de Talentos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <img src="imagens/logo.png" alt="Logo Bússola dos Talentos">
-    <h1>Bússola dos Talentos</h1>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Encontre seu norte e desenvolva seu talento!</h2>
-    <p>Planos acessíveis e conteúdos exclusivos para você alcançar o sucesso.</p>
-    <a href="#planos"><button>Quero conhecer os planos</button></a>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <div class="nav-compass">
+        🧭
+      </div>
+      Bússola de Talentos
+    </a>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#como-funciona">Como Funciona</a></li>
+          <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <!-- Header com imagem de fundo responsiva -->
+    <header class="hero-header d-flex align-items-center text-center text-white">
+    <div class="container">
+        <h1 class="display-4">Descubra seus talentos naturais</h1>
+        <p class="lead">Encontre o seu verdadeiro norte e transforme sua vida.</p>
+        <a href="#planos" class="btn btn-warning btn-lg mt-3 btn-efeito">Iniciar Teste</a>
+    </div>
+    </header>
+
+
+  <!-- Sobre -->
+  <section id="sobre" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4">O que é a Bússola de Talentos?</h2>
+      <p class="lead">Um teste motivacional que revela seus talentos e ajuda você a encontrar direção na vida.</p>
+      <div class="row mt-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h5>🎯 Autoconhecimento</h5>
+              <p>Descubra o que te move e o que te faz único.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h5>🌟 Propósito</h5>
+              <p>Encontre clareza sobre seus objetivos e paixões.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h5>🧭 Direcionamento</h5>
+              <p>Tenha um plano claro para seguir com confiança.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- PLANOS -->
-  <section id="planos" class="planos">
-    <h3>Nossos Planos</h3>
-    <div class="card">
-      <h4>Plano Básico</h4>
-      <p>Acesso a conteúdos essenciais para iniciar sua jornada.</p>
-      <button>Assinar</button>
+  <!-- Como Funciona -->
+ <section id="como-funciona" class="text-center">
+  <div class="container">
+    <h2 class="mb-4">Como Funciona</h2>
+    <div class="row">
+      <div class="col-md-4" data-aos="fade-up">
+        <h5>1️⃣ Responda perguntas motivacionais</h5>
+        <p>Simples, rápidas e profundas.</p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up">
+        <h5>2️⃣ Receba seu resultado</h5>
+        <p>Um perfil personalizado com seus talentos.</p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up">
+        <h5>3️⃣ Descubra seu caminho</h5>
+        <p>Use o resultado como bússola para sua vida.</p>
+      </div>
     </div>
-    <div class="card">
-      <h4>Plano Avançado</h4>
-      <p>Mais recursos e acompanhamento para acelerar seus resultados.</p>
-      <button>Assinar</button>
-    </div>
-    <div class="card">
-      <h4>Plano Premium</h4>
-      <p>Experiência completa com suporte exclusivo e mentorias.</p>
-      <button>Assinar</button>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- DEPOIMENTOS -->
-  <section class="depoimentos">
-    <h3>O que dizem nossos membros</h3>
-    <div class="depoimento">
-      <p>"Graças ao Bússola dos Talentos consegui direcionar minha carreira e alcançar oportunidades que nunca imaginei."</p>
-      <span>— Craque Neto</span>
-    </div>
-    <div class="depoimento">
-      <p>"Os planos são acessíveis e o conteúdo realmente faz diferença na prática. Recomendo a todos!"</p>
-      <span>— Jonathan Calleri</span>
-    </div>
-    <div class="depoimento">
-      <p>"A mentoria foi essencial para eu conseguir meu primeiro estágio na área que sempre sonhei."</p>
-      <span>— Gabigol da Galera</span>
-    </div>
-  </section>
 
-  <!-- FAQ -->
-  <section class="faq">
-    <h3>Perguntas Frequentes</h3>
-    <details>
-      <summary>Como funcionam os planos?</summary>
-      <p>Cada plano oferece diferentes níveis de acesso a conteúdos, mentorias e suporte. Você escolhe o que melhor se adapta à sua jornada.</p>
-    </details>
-    <details>
-      <summary>Posso cancelar a qualquer momento?</summary>
-      <p>Sim! Você pode cancelar sua assinatura quando quiser, sem taxas extras ou burocracia.</p>
-    </details>
-    <details>
-      <summary>Os conteúdos são atualizados?</summary>
-      <p>Sim, os conteúdos são constantemente atualizados para garantir que você tenha sempre as melhores ferramentas e conhecimentos.</p>
-    </details>
-    <details>
-      <summary>O pagamento é seguro?</summary>
-      <p>Sim, utilizamos plataformas de pagamento seguras e confiáveis para proteger seus dados.</p>
-    </details>
-  </section>
 
-  <!-- CTA FINAL -->
-  <section class="cta-final">
-    <h2>Pronto para começar sua jornada?</h2>
-    <p>Descubra seu talento e alcance o sucesso com o Bússola dos Talentos.</p>
-    <a href="#planos"><button>Assinar Agora</button></a>
-  </section>
+ <section id="depoimentos" class="bg-gradient-pulsante text-center text-white">
+  <div class="container">
+    <h2 class="mb-5">O que dizem sobre a Bússola de Talentos</h2>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Bússola dos Talentos - Todos os direitos reservados.</p>
+    <div id="carouselDepoimentos" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Depoimento 1 -->
+        <div class="carousel-item active">
+          <div class="card card-elevada bg-gradient-pulsante mx-auto text-white text-center" style="max-width: 600px;">
+            <div class="card-body">
+              <img src="imagens/seu-joão.png" alt="Seu João" class="rounded-circle mb-3" width="100" height="100">
+              <p class="card-text">"Esse teste me ajudou a entender o que realmente queria da vida."</p>
+              <h6 class="card-subtitle mt-3 text-muted">Seu João, 82 anos – Aposentado</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 2 -->
+        <div class="carousel-item">
+          <div class="card card-elevada bg-gradient-pulsante mx-auto text-white text-center" style="max-width: 600px;">
+            <div class="card-body">
+              <img src="imagens/mulher.png" alt="Camila" class="rounded-circle mb-3" width="100" height="100">
+              <p class="card-text">"Descobri talentos que nem sabia que tinha. Foi transformador."</p>
+              <h6 class="card-subtitle mt-3 text-muted">Camila, 29 anos – Designer</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 3 -->
+        <div class="carousel-item">
+          <div class="card card-elevada bg-gradient-pulsante mx-auto text-white text-center" style="max-width: 600px;">
+            <div class="card-body">
+              <img src="imagens/big-mike.png" alt="Rafael" class="rounded-circle mb-3" width="100" height="100">
+              <p class="card-text">"Me ajudou a tomar decisões importantes na minha carreira."</p>
+              <h6 class="card-subtitle mt-3 text-muted">Big Mike - 26 anos, Programador</h6>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Setas de navegação -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- CTA final dentro da mesma seção -->
+    <div class="mt-5 pt-4">
+      <h2 class="mb-3">Pronto para descobrir seu verdadeiro talento?</h2>
+      <p class="lead mb-4">Dê o primeiro passo rumo à sua transformação pessoal.</p>
+      <a href="#panos" class="btn btn-warning btn-lg mt-3 btn-efeito">Começar Teste</a>
+    </div>
+  </div>
+</section>
+
+<!-- Planos -->
+<section id="planos" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-5">Escolha seu Plano</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      
+      <!-- Plano Básico -->
+      <div class="col">
+        <div class="card h-100 shadow-sm borda-azul">
+          <div class="card-body">
+            <h5 class="card-title">Básico</h5>
+            <h6 class="text-muted">Grátis</h6>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>✔️ Acesso desde PC/MAC</li>
+              <li>✔️ Recursos de língua e matemática</li>
+              <li>✔️ Fichas para imprimir</li>
+              <li>✔️ Jogos limitados</li>
+            </ul>
+            <a href="#" class="btn btn-outline-success">Descarga grátis</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plano Premium -->
+      <div class="col">
+        <div class="card h-100 border-warning shadow destacado">
+          <div class="card-body">
+            <h5 class="card-title">Premium</h5>
+            <h6 class="text-warning">R$ 12,50/mês</h6>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>✔️ Todos os recursos ilimitados</li>
+              <li>✔️ Recursos língua/mates/inglês</li>
+              <li>✔️ Fichas para imprimir</li>
+              <li>✔️ Jogos ilimitados</li>
+              <li>✔️ Sem publicidade</li>
+              <li>✔️ Informes de uso</li>
+              <li>✔️ Até 5 usuários</li>
+            </ul>
+            <a href="#" class="btn btn-warning text-dark">Adicionar agora</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plano Business -->
+      <div class="col">
+        <div class="card h-100 shadow-sm borda-azul">
+          <div class="card-body">
+            <h5 class="card-title">Business</h5>
+            <h6 class="text-success">R$ 25,00/mês</h6>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>✔️ Todos os recursos</li>
+              <li>✔️ Recursos em inglês</li>
+              <li>✔️ Jogos ilimitados</li>
+              <li>✔️ Informes personalizados</li>
+              <li>✔️ Até 30 usuários</li>
+            </ul>
+            <a href="#" class="btn btn-outline-success">Adicionar agora</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Rodapé -->
+  <footer class="py-4 bg-black text-white text-center">
+    <div class="container">
+      <p>&copy; 2025 Bússola de Talentos. Todos os direitos reservados.</p>
+    </div>
   </footer>
 
-
-    <script>
-    window.history.scrollRestoration = "manual";
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    }
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  const carousel = document.querySelector('#carouselDepoimentos');
+  const bsCarousel = new bootstrap.Carousel(carousel, {
+    interval: 5000,
+    ride: 'carousel'
+  });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+
+
 </body>
 </html>
-
-
