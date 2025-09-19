@@ -60,7 +60,7 @@
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
-            min-height: 100vh;
+            height: 100vh;
             padding-top: 80px;
             display: flex;
             align-items: center;
@@ -97,40 +97,6 @@
             animation: slideInLeft 1s ease-out 0.4s both;
         }
 
-        .btn-hero-primary {
-            background: white;
-            color: #2563eb;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            padding: 1rem 2rem;
-            margin: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn-hero-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            color: #2563eb;
-        }
-
-        .btn-hero-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            border-radius: 50px;
-            font-weight: 600;
-            padding: 1rem 2rem;
-            margin: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn-hero-secondary:hover {
-            background: white;
-            color: #2563eb;
-        }
-
-        
 
         /* Feature Cards */
         .feature-card {
