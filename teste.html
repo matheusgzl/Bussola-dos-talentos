@@ -527,6 +527,16 @@
         .btn-efeito:hover::after {
         left: 100%;
         }
+
+        .btn-lg {
+            background: #fbbf24; 
+            color: #000; 
+            border: none; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            padding: 1rem 2rem; 
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 <body>
@@ -837,9 +847,10 @@
                                 <li><i class="bi bi-check-circle-fill"></i> Até 5 usuários</li>
                             </ul>
                             
-                            <button class="btn btn-gradient btn-lg w-100 mt-4" onclick="selectPlan('premium')">
+                            <button class="btn btn-lg w-100 mt-4 btn-efeito" onclick="selectPlan('premium')" style="background: #fbbf24; color: #000; border: none; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; position: relative; overflow: hidden;">
                                 Assinar Premium
                             </button>
+
                         </div>
                     </div>
                 </div>
@@ -891,7 +902,7 @@
                 <div class="col-lg-8 mx-auto">
                     <h2 class="display-4 fw-bold mb-4 fade-in">Pronto para Descobrir Seus Talentos?</h2>
                     <p class="lead mb-4 fade-in">Comece sua jornada de autodescoberta profissional hoje mesmo</p>
-                    <a href="#" class="btn btn-light btn-lg px-5 fade-in" onclick="startAssessment()">
+                     <a href="#" class="btn btn-lg px-5 fade-in btn-efeito" onclick="startAssessment()" style="background: #fbbf24; color: #000; border: none; border-radius: 50px; font-weight: 600; padding: 1rem 2rem; transition: all 0.3s ease;">
                         <i class="bi bi-play-circle me-2"></i>Iniciar Avaliação Gratuita
                     </a>
                 </div>
