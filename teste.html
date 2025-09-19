@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bússola de Talentos - Encontre Seu Caminho Profissional</title>
+    
+    <!-- Bootstrap 5.3.2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #2563eb, #7c3aed);
+            --secondary-gradient: linear-gradient(135deg, #667eea, #764ba2);
+            --dark-gradient: linear-gradient(135deg, #1f2937, #374151);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Custom Navbar */
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb !important;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: #374151 !important;
+            transition: color 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #2563eb !important;
+        }
+
+        .btn-gradient {
+            background: var(--primary-gradient);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-image: url('imagens/jordan-madrid-iDzKdNI7Qgc-unsplash.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            padding-top: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.719);
+        }
+
+        
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: slideInLeft 1s ease-out 0.2s both;
+        }
+
+        .hero-buttons {
+            animation: slideInLeft 1s ease-out 0.4s both;
+        }
+
+        .btn-hero-primary {
+            background: white;
+            color: #2563eb;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            color: #2563eb;
+        }
+
+        .btn-hero-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero-secondary:hover {
+            background: white;
+            color: #2563eb;
+        }
+
+        
+
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--dark-gradient);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .stat-number {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer h5 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 0;
+            }
+            
+            .compass {
+                margin: 2rem 0;
+            }
+            
+            .feature-card {
+                margin-bottom: 2rem;
+            }
+            
+            .btn-hero-primary,
+            .btn-hero-secondary {
+                display: block;
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+        }
+
+        /* Testimonials Section */
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-avatar {
+            position: relative;
+        }
+
+        .avatar-placeholder {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .stars {
+            margin-top: 0.5rem;
+        }
+
+        .testimonial-content {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: -10px;
+            left: 0;
+            font-size: 2rem;
+            color: var(--primary-gradient);
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #374151;
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-control-prev {
+            left: -25px;
+        }
+
+        .carousel-control-next {
+            right: -25px;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-indicators {
+            bottom: -50px;
+        }
+
+        .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            border: none;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicators button.active {
+            background: var(--primary-gradient);
+            transform: scale(1.2);
+        }
+
+        /* Extra small devices */
+        @media (max-width: 576px) {
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+        }
+
+        /* Botões */
+        .btn-warning {
+        font-weight: bold;
+        transition: transform 0.2s ease;
+        }
+        .btn-warning:hover {
+        transform: scale(1.05);
+        }
+
+        /* Micro interação nos botões */
+        .btn-efeito {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-efeito:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
+        }
+
+        .btn-efeito::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: left 0.4s ease;
+        }
+
+        .btn-efeito:hover::after {
+        left: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio">
+                🧭 Bússola de Talentos
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recursos">Recursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+                <a href="#teste" class="btn btn-gradient ms-3">Fazer Teste</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+        <header class="hero-header d-flex align-items-center text-center text-white">
+    <div class="container">
+        <h1 class="display-4">Descubra seus talentos naturais</h1>
+        <p class="lead">Encontre o seu verdadeiro norte e transforme sua vida.</p>
+        <a href="#planos" class="btn btn-warning btn-lg mt-3 btn-efeito">Iniciar Teste</a>
+    </div>
+    </header>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5" id="recursos">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold fade-in">Como Funciona</h2>
+                    <p class="lead text-muted fade-in">Descubra seus talentos através de nossa metodologia inovadora</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card fade-in">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="bi bi-bullseye"></i>
+                            </div>
+                            <h3 class="card-title">Avaliação Personalizada</h3>
+                            <p class="card-text">Questionários inteligentes que identificam suas habilidades naturais, interesses e valores profissionais de forma precisa.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card fade-in">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                            <h3 class="card-title">Análise Detalhada</h3>
+                            <p class="card-text">Relatórios completos com insights sobre seus pontos fortes, áreas de desenvolvimento e compatibilidade com diferentes carreiras.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card fade-in">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="bi bi-rocket-takeoff"></i>
+                            </div>
+                            <h3 class="card-title">Plano de Ação</h3>
+                            <p class="card-text">Receba um roadmap personalizado com passos concretos para desenvolver sua carreira e alcançar seus objetivos profissionais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="fade-in">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Profissionais Avaliados</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="fade-in">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Taxa de Satisfação</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="fade-in">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Carreiras Mapeadas</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="fade-in">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Suporte Disponível</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light" id="depoimentos">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold fade-in">O Que Nossos Clientes Dizem</h2>
+                    <p class="lead text-muted fade-in">Histórias reais de transformação profissional</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div id="testimonialsCarousel" class="carousel slide fade-in" data-bs-ride="carousel" data-bs-interval="5000">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2"></button>
+                        </div>
+                        
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-4 text-center mb-4 mb-md-0">
+                                            <div class="testimonial-avatar">
+                                                <div class="avatar-placeholder">
+                                                    <i class="bi bi-person-circle"></i>
+                                                </div>
+                                            </div>
+                                            <h5 class="mt-3 mb-1">Maria Silva</h5>
+                                            <p class="text-muted">Gerente de Marketing</p>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="testimonial-content">
+                                                <i class="bi bi-quote quote-icon"></i>
+                                                <p class="testimonial-text">"A Bússola de Talentos foi fundamental para minha transição de carreira. Descobri habilidades que nem sabia que tinha e hoje trabalho em uma área que realmente me realiza. O processo foi muito detalhado e as orientações foram precisas."</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <div class="testimonial-card">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-4 text-center mb-4 mb-md-0">
+                                            <div class="testimonial-avatar">
+                                                <div class="avatar-placeholder">
+                                                    <i class="bi bi-person-circle"></i>
+                                                </div>
+                                            </div>
+                                            <h5 class="mt-3 mb-1">João Santos</h5>
+                                            <p class="text-muted">Desenvolvedor de Software</p>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="testimonial-content">
+                                                <i class="bi bi-quote quote-icon"></i>
+                                                <p class="testimonial-text">"Estava perdido na minha carreira até encontrar a Bússola de Talentos. A avaliação me mostrou que minha paixão por tecnologia poderia se tornar minha profissão. Hoje sou desenvolvedor e nunca estive tão feliz profissionalmente!"</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <div class="testimonial-card">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-4 text-center mb-4 mb-md-0">
+                                            <div class="testimonial-avatar">
+                                                <div class="avatar-placeholder">
+                                                    <i class="bi bi-person-circle"></i>
+                                                </div>
+                                            </div>
+                                            <h5 class="mt-3 mb-1">Ana Costa</h5>
+                                            <p class="text-muted">Consultora de RH</p>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="testimonial-content">
+                                                <i class="bi bi-quote quote-icon"></i>
+                                                <p class="testimonial-text">"Excelente ferramenta! Como profissional de RH, recomendo a Bússola de Talentos para todos os meus clientes. A metodologia é sólida e os resultados são impressionantes. Já vi muitas vidas profissionais transformadas."</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section text-center" id="teste">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-4 fw-bold mb-4 fade-in">Pronto para Descobrir Seus Talentos?</h2>
+                    <p class="lead mb-4 fade-in">Comece sua jornada de autodescoberta profissional hoje mesmo</p>
+                    <a href="#" class="btn btn-light btn-lg px-5 fade-in" onclick="startAssessment()">
+                        <i class="bi bi-play-circle me-2"></i>Iniciar Avaliação Gratuita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5><i class="bi bi-compass me-2"></i>Bússola de Talentos</h5>
+                    <p class="text-muted">Ajudando profissionais a encontrarem seu verdadeiro potencial e construírem carreiras de sucesso.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Links Úteis</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#recursos">Recursos</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Suporte</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contato</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope me-2"></i>contato@bussoladetalentos.com</li>
+                        <li><i class="bi bi-phone me-2"></i>(11) 9999-9999</li>
+                        <li><i class="bi bi-geo-alt me-2"></i>São Paulo, SP</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-0">&copy; 2024 Bússola de Talentos. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3.2 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Feature cards enhanced hover effect
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Assessment function
+        function startAssessment() {
+            // Create a modal-like alert for better UX
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert alert-success alert-dismissible fade show position-fixed';
+            alertDiv.style.cssText = 'top: 100px; left: 50%; transform: translateX(-50%); z-index: 9999; max-width: 500px;';
+            alertDiv.innerHTML = `
+                <i class="bi bi-check-circle me-2"></i>
+                <strong>Parabéns!</strong> Você está prestes a iniciar sua jornada de autodescoberta profissional. 
+                Em breve você será redirecionado para nossa plataforma de avaliação completa!
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(alertDiv);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (alertDiv.parentNode) {
+                    alertDiv.remove();
+                }
+            }, 5000);
+        }
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/[^\d]/g, ''));
+                const increment = target / 100;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = counter.textContent.replace(/\d+/, target);
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = counter.textContent.replace(/\d+/, Math.floor(current));
+                    }
+                }, 20);
+            });
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Auto-collapse navbar on mobile after clicking a link
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Enhanced mobile touch interactions
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.01)';
+                });
+                
+                card.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    }, 150);
+                });
+            });
+        }
+    </script>
+<script>
+(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9819bd5ac4577810',t:'MTc1ODI5MTc5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
