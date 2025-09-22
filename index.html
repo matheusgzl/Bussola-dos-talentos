@@ -689,17 +689,51 @@
             const counters = document.querySelectorAll('.stat-number');
             
             counters.forEach(counter => {
-                const target = parseInt(counter.textContent.replace(/[^\d]/g, ''));
+                const originalText = counter.textContent;
+                const numbers = originalText.match(/\d+/g);
+                
+                // Handle special case for "24/7" format
+                if (originalText.includes('/')) {
+                    const parts = originalText.split('/');
+                    const firstNumber = parseInt(parts[0]);
+                    const secondNumber = parseInt(parts[1]);
+                    
+                    let currentFirst = 0;
+                    let currentSecond = 0;
+                    const incrementFirst = firstNumber / 50;
+                    const incrementSecond = secondNumber / 50;
+                    
+                    const timer = setInterval(() => {
+                        currentFirst += incrementFirst;
+                        currentSecond += incrementSecond;
+                        
+                        if (currentFirst >= firstNumber && currentSecond >= secondNumber) {
+                            counter.textContent = firstNumber + '/' + secondNumber;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(currentFirst) + '/' + Math.floor(currentSecond);
+                        }
+                    }, 40);
+                    return;
+                }
+                
+                // Skip animation for non-numeric content
+                if (!numbers) {
+                    return;
+                }
+                
+                const target = parseInt(numbers[0]);
+                const suffix = originalText.replace(/\d+/, '');
                 const increment = target / 100;
                 let current = 0;
                 
                 const timer = setInterval(() => {
                     current += increment;
                     if (current >= target) {
-                        counter.textContent = counter.textContent.replace(/\d+/, target);
+                        counter.textContent = target + suffix;
                         clearInterval(timer);
                     } else {
-                        counter.textContent = counter.textContent.replace(/\d+/, Math.floor(current));
+                        counter.textContent = Math.floor(current) + suffix;
                     }
                 }, 20);
             });
