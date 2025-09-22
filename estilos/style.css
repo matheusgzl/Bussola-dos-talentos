@@ -198,10 +198,8 @@
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             .hero-section {
-                position: relative;
-                background-size: cover;
-                padding: 2rem 0;
-            }
+            background-attachment: scroll;
+        }
             
             .compass {
                 margin: 2rem 0;
@@ -308,7 +306,7 @@
         .carousel-indicators button {
             width: 12px;
             height: 12px;
-            border-radius: 50%;
+            border-radius: 60%;
             background: #cbd5e1;
             border: none;
             margin: 0 5px;
